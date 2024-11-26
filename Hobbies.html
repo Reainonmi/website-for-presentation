@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>취미생활</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .page-container {
+      width: 100%;
+      height: 400vh; /* Adjusted for two pages */
+      position: relative;
+    }
+    
+    .page {
+      width: 100%;
+      height: 200vh; /* Adjusted for two pages */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      padding: 20px;
+      background-size: cover; /* 覆盖整个元素 */
+      background-position: center; /* 居中显示 */
+      background-attachment: fixed; /* 固定背景 */
+      background-repeat: no-repeat; /* 防止背景图片重复 */
+    }
+    
+    /* 标题样式 */
+    .title {
+      color: #ffffff; /* 白色标题 */
+      font-size: 8vh;
+      margin-bottom: 40px;
+      text-shadow: 
+        0 2px 0 #000000,
+        0 4px 0 #000000,
+        0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .interests-page {
+      background-image: url('./images/ph7.jpg'); /* 设置第一页背景图片 */
+    }
+    
+    .interests-image {
+      width: 80%;
+      height: 40%;
+      background-image: url('./images/ph6.jpg'); /* 设置第一页插图 */
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    /* 第二页样式 */
+    .second-page {
+      background-image: url('./images/ph8.jpg'); /* 设置第二页背景图片 */
+    }
+    
+    .second-page .title {
+      color: #ffffff; /* 白色标题 */
+    }
+    
+    .discover-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 300px;
+    }
+    
+    .discover-link {
+      padding: 15px;
+      text-align: center;
+      background-color: #460f7d;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .discover-link:hover {
+      background-color: #2cbbf4;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <!-- 第一页 -->
+    <div class="page interests-page">
+      <div class="title">취미생활</div>
+      <div class="interests-image"></div>
+    </div>
+
+    <!-- 第二页 -->
+    <div class="page second-page">
+      <div class="title">Discover More</div>
+      <div class="discover-links">
+        <a href="My Hometown.html" class="discover-link">나의 고향</a>
+        <a href="Introduction.html" class="discover-link">개인소개</a>
+        <a href="index.html" class="discover-link">매인 페이지로 돌아가기</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 고향</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .page-container {
+      width: 100%;
+      height: 400vh; /* Adjusted for two pages */
+      position: relative;
+    }
+    
+    .page {
+      width: 100%;
+      height: 200vh; /* Adjusted for two pages */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      background-size: cover; /* 覆盖整个元素 */
+      background-position: center; /* 居中显示 */
+      background-attachment: fixed; /* 固定背景 */
+      background-repeat: no-repeat; /* 防止背景图片重复 */
+    }
+    
+    .title {
+      color: #ffffff; /* 白色标题 */
+      font-size: 8vh;
+      margin-bottom: 40px;
+      text-shadow: 
+        0 2px 0 #000000,
+        0 4px 0 #000000,
+        0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .intro-text {
+      color: #ffffff; /* 白色文本 */
+      font-size: 4vh;
+      text-align: center;
+      max-width: 80%;
+      margin-bottom: 40px;
+      text-shadow: 
+        0 2px 0 #000000,
+        0 4px 0 #000000,
+        0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .image-container {
+      width: 80%;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 40px;
+    }
+    
+    .image-container img {
+      width: 30%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .discover-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 300px;
+    }
+    
+    .discover-link {
+      padding: 15px;
+      text-align: center;
+      background-color: #460f7d;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .discover-link:hover {
+      background-color: #2cbbf4;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <!-- 第一页 -->
+    <div class="page" style="background-image: url('./images/ph9.jpg');">
+      <div class="title">나의 고향</div>
+      <div class="intro-text">여기에 위치한 산동성 옌타이는 중국 동북부의 아름다운 도시입니다.</div>
+      <div class="image-container">
+        <img src="./images/ph10.jpg" alt="Image 1">
+        <img src="./images/ph11.jpg" alt="Image 2">
+        <img src="./images/ph12.jpg" alt="Image 3">
+      </div>
+    </div>
+
+    <!-- 第二页 -->
+    <div class="page" style="background-image: url('./images/ph13.jpg');">
+      <div class="title">Discover More</div>
+      <div class="discover-links">
+        <a href="Introduction.html" class="discover-link">자기소개</a>
+        <a href="hobbies.html" class="discover-link">취미생활</a>
+        <a href="index.html" class="discover-link">매인 페이지로 돌아가기</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

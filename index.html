@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jini's</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .page-container {
+      width: 100%;
+      height: 200vh;
+      position: relative;
+    }
+    
+    .page {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .background {
+      background-image: url('./images/ph1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    .second-background {
+      background-image: url('./images/ph2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    /* 新的Welcome标题样式 */
+    .welcome-container {
+      position: absolute;
+      right: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .welcome-title {
+      color: #460f7d;
+      font-size: 8vh;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 
+        0 2px 0 #b393d3,
+        0 4px 0 #b393d3,
+        0 6px 0 #b393d3,
+        0 8px 0 #b393d3,
+        0 10px 10px rgba(0, 0, 0, 0.4);
+      transform: perspective(500px) rotateY(-15deg);
+      transition: transform 0.3s ease;
+    }
+    
+    .welcome-title:hover {
+      transform: perspective(500px) rotateY(0deg);
+    }
+    
+    /* 第二页的新布局 */
+    .sections-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .section:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .section-title {
+      font-size: 5vh;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 
+        2px 2px 0 #460f7d,
+        4px 4px 0 #460f7d,
+        6px 6px 20px rgba(0, 0, 0, 0.5);
+      transform: perspective(1000px) rotateX(0deg);
+      transition: all 0.3s ease;
+    }
+    
+    .section:hover .section-title {
+      transform: perspective(1000px) rotateX(10deg) scale(1.1);
+    }
+    
+    /* 分隔线 */
+    .section-divider {
+      height: 2px;
+      width: 80%;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+      );
+      margin: 0 auto;
+    }
+    
+    /* 链接样式优化 */
+    .section a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <!-- 第一页 -->
+    <div class="page background">
+      <div class="welcome-container">
+        <div class="welcome-title">Welcome</div>
+      </div>
+    </div>
+    
+    <!-- 第二页 -->
+    <div class="page second-background">
+      <div class="sections-container">
+        <div class="section">
+          <a href="introduction.html">
+            <div class="section-title">자기소개</div>
+          </a>
+        </div>
+        <div class="section-divider"></div>
+        <div class="section">
+          <a href="hobbies.html">
+            <div class="section-title">취미생활</div>
+          </a>
+        </div>
+        <div class="section-divider"></div>
+        <div class="section">
+          <a href="My Hometown.html">
+            <div class="section-title">나의 고향</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let isScrolling = false;
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+
+    window.addEventListener('wheel', (event) => {
+      if (isScrolling) return;
+
+      const direction = event.deltaY > 0 ? 1 : -1;
+      const nextPage = Math.max(0, Math.min(currentPage + direction, pages.length - 1));
+      
+      if (nextPage !== currentPage) {
+        isScrolling = true;
+        currentPage = nextPage;
+        
+        window.scrollTo({
+          top: currentPage * window.innerHeight,
+          behavior: 'smooth'
+        });
+
+        setTimeout(() => {
+          isScrolling = false;
+        }, 1000);
+      }
+    });
+  </script>
+</body>
+</html>

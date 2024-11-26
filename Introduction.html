@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자기소개 - Jini</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .page-container {
+      width: 100%;
+      height: 200vh;
+      position: relative;
+    }
+    
+    .page {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      padding: 20px;
+      background-size: cover; /* 覆盖整个元素 */
+      background-position: center; /* 居中显示 */
+      background-attachment: fixed; /* 固定背景 */
+      background-repeat: no-repeat; /* 防止背景图片重复 */
+    }
+    
+    /* 标题样式 */
+    .title {
+      color: #460f7d;
+      font-size: 8vh;
+      margin-bottom: 40px;
+      text-shadow: 
+        0 2px 0 #b393d3,
+        0 4px 0 #b393d3,
+        0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* 介绍表格 */
+    .intro-table {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    .photo-column {
+      width: 50%;
+      padding: 20px;
+    }
+    
+    .photo-column img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .info-column {
+      width: 50%;
+      padding: 20px;
+    }
+    
+    .info-row {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .info-label {
+      width: 100%;
+      font-weight: bold;
+      color: #460f7d;
+      text-shadow: 
+        1px 1px 2px rgba(70, 15, 125, 0.3);
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+    
+    .info-value {
+      width: 100%;
+      color: #333;
+      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+    
+    .divider {
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(
+        to right, 
+        transparent, 
+        #460f7d, 
+        transparent
+      );
+      margin: 10px 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* 第二页样式 */
+    .second-page {
+      background-image: url('./images/ph5.jpg'); /* 设置第二页背景图片 */
+    }
+    
+    .first-page {
+      background-image: url('./images/ph4.jpg'); /* 设置第一页背景图片 */
+    }
+    
+    .second-page .title {
+      color: white; /* 设置第二页标题颜色为白色 */
+      text-shadow: 
+        0 2px 0 #460f7d,
+        0 4px 0 #460f7d,
+        0 6px 10px rgba(0, 0, 0, 0.2); /* 修改文本阴影以适应白色文本 */
+    }
+    
+    .discover-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 300px;
+    }
+    
+    .discover-link {
+      padding: 15px;
+      text-align: center;
+      background-color: #460f7d;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .discover-link:hover {
+      background-color: #2cbbf4;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <!-- 第一页 -->
+    <div class="page first-page">
+      <div class="title">Introduction</div>
+      <div class="intro-table">
+        <div class="photo-column">
+          <img src="./images/ph3.jpg" alt="Profile Photo">
+        </div>
+        <div class="info-column">
+          <div class="info-row">
+            <div class="info-label">이름</div>
+            <div class="info-value">곽진</div>
+            <div class="divider"></div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">나이</div>
+            <div class="info-value">20</div>
+            <div class="divider"></div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">전공</div>
+            <div class="info-value">컴퓨터</div>
+            <div class="divider"></div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">국적</div>
+            <div class="info-value">중국</div>
+            <div class="divider"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第二页 -->
+    <div class="page second-page">
+      <div class="title">Discover More</div>
+      <div class="discover-links">
+        <a href="hobbies.html" class="discover-link">취미생활</a>
+        <a href="My Hometown.html" class="discover-link">나의 고향</a>
+        <a href="index.html" class="discover-link">매인 페이지로 돌아가기</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let isScrolling = false;
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+
+    window.addEventListener('wheel', (event) => {
+      if (isScrolling) return;
+
+      const direction = event.deltaY > 0 ? 1 : -1;
+      const nextPage = Math.max(0, Math.min(currentPage + direction, pages.length - 1));
+      
+      if (nextPage !== currentPage) {
+        isScrolling = true;
+        currentPage = nextPage;
+        
+        window.scrollTo({
+          top: currentPage * window.innerHeight,
+          behavior: 'smooth'
+        });
+
+        setTimeout(() => {
+          isScrolling = false;
+        }, 1000);
+      }
+    });
+  </script>
+</body>
+</html>
